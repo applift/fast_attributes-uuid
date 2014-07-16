@@ -2,23 +2,22 @@ require 'spec_helper'
 
 describe FastAttributes::UUID do
   it 'adds UUID type to supported list' do
-    expect(FastAttributes.type_casting).to eq({
-      String          => 'String(%s)',
-      Integer         => 'Integer(%s)',
-      Array           => 'Array(%s)',
-      Date            => 'Date.parse(%s)',
-      Time            => 'Time.parse(%s)',
-      DateTime        => 'DateTime.parse(%s)',
-      UUIDTools::UUID => <<-EOS.gsub(/^\s*/, '')
-        _value = %s
-        case value.length
-        when 36 then UUIDTools::UUID.parse(_value)
-        when 32 then UUIDTools::UUID.parse_hexdigest(_value)
-        when 0  then nil
-        else UUIDTools::UUID.parse_raw(_value)
+    expect(FastAttributes.type_casting[UUIDTools::UUID].template.gsub(/\s*/, '')).to eq(<<-EOS.gsub(/\s*/, '')
+        case %s
+        when nil
+          nil
+        when UUIDTools::UUID
+          %s
+        else
+          case %s.length
+          when 36 then UUIDTools::UUID.parse(%s)
+          when 32 then UUIDTools::UUID.parse_hexdigest(%s)
+          when 0  then nil
+          else UUIDTools::UUID.parse_raw(%s)
+          end
         end
       EOS
-    })
+    )
   end
 
   it 'attribute parses UUID value' do

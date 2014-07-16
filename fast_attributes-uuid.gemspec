@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 1.9.2'
 
-  spec.add_runtime_dependency 'fast_attributes', '~> 0.3.0'
+  spec.add_runtime_dependency 'fast_attributes', '~> 0.5.0'
   spec.add_runtime_dependency 'uuidtools',       '~> 2.1.4'
 
   spec.add_development_dependency 'bundler', '~> 1.6'

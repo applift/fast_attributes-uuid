@@ -6,12 +6,11 @@ module FastAttributes
   end
 
   set_type_casting UUIDTools::UUID, <<-EOS.gsub(/^\s*/, '')
-    _value = %s
-    case value.length
-    when 36 then UUIDTools::UUID.parse(_value)
-    when 32 then UUIDTools::UUID.parse_hexdigest(_value)
+    case %s.length
+    when 36 then UUIDTools::UUID.parse(%s)
+    when 32 then UUIDTools::UUID.parse_hexdigest(%s)
     when 0  then nil
-    else UUIDTools::UUID.parse_raw(_value)
+    else UUIDTools::UUID.parse_raw(%s)
     end
   EOS
 end
