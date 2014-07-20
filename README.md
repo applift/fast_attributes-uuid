@@ -1,6 +1,9 @@
 # FastAttributes::UUID
-
-TODO: Write a gem description
+[![Gem Version](http://img.shields.io/gem/v/fast_attributes-uuid.svg)](http://rubygems.org/gems/fast_attributes-uuid)
+[![Build Status](http://img.shields.io/travis/applift/fast_attributes-uuid.svg)](https://travis-ci.org/applift/fast_attributes-uuid)
+[![Coverage Status](http://img.shields.io/coveralls/applift/fast_attributes-uuid.svg)](https://coveralls.io/r/applift/fast_attributes-uuid?branch=master)
+[![Code Climate](http://img.shields.io/codeclimate/github/applift/fast_attributes-uuid.svg)](https://codeclimate.com/github/applift/fast_attributes-uuid)
+[![Dependency Status](http://img.shields.io/gemnasium/applift/fast_attributes-uuid.svg)](https://gemnasium.com/applift/fast_attributes-uuid)
 
 ## Installation
 
