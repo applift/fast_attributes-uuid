@@ -2,21 +2,25 @@ require 'spec_helper'
 
 describe FastAttributes::UUID do
   it 'adds UUID type to supported list' do
-    expect(FastAttributes.type_casting[UUIDTools::UUID].template.gsub(/\s*/, '')).to eq(<<-EOS.gsub(/\s*/, '')
-        case %s
+    expect(FastAttributes.type_casting[UUIDTools::UUID].compile_method_body('id', 'argument').gsub(/\s*/, '')).to eq(<<-EOS.gsub(/\s*/, '')
+      begin
+        case argument
         when nil
           nil
         when UUIDTools::UUID
-          %s
+          argument
         else
-          case %s.length
-          when 36 then UUIDTools::UUID.parse(%s)
-          when 32 then UUIDTools::UUID.parse_hexdigest(%s)
+          case argument.length
+          when 36 then UUIDTools::UUID.parse(argument)
+          when 32 then UUIDTools::UUID.parse_hexdigest(argument)
           when 0  then nil
-          else UUIDTools::UUID.parse_raw(%s)
+          else UUIDTools::UUID.parse_raw(argument)
           end
         end
-      EOS
+      rescue => e
+        raise FastAttributes::TypeCast::InvalidValueError, %(Invalid value "\#{argument}" for attribute "id" of type "UUIDTools::UUID")
+      end
+    EOS
     )
   end
 
