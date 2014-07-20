@@ -23,8 +23,7 @@ $ bundle
 
 Or install it yourself as:
 ```
-$ gem install fast_attributes
-$ gem install fast_attributes-uuid
+$ gem install fast_attributes fast_attributes-uuid
 ```
 
 ## Usage
@@ -35,7 +34,7 @@ require 'fast_attributes/uuid'
 
 class Request
   extend FastAttributes
-	attribute :id, UUIDTools::UUID
+  attribute :id, UUIDTools::UUID
 end
 
 request = Request.new
