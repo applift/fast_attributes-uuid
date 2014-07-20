@@ -11,16 +11,21 @@ This gem adds support of `UUID` type to `fast_attributes` gem
 ## Installation
 
 Add this line to your application's Gemfile:
-
-    gem 'fast_attributes-uuid'
+```ruby
+gem 'fast_attributes'
+gem 'fast_attributes-uuid'
+```
 
 And then execute:
-
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
-
-    $ gem install fast_attributes-uuid
+```
+$ gem install fast_attributes
+$ gem install fast_attributes-uuid
+```
 
 ## Usage
 
