@@ -50,7 +50,7 @@ request.id = UUIDTools::UUID.parse('4e79aff3-1f04-4fea-bebf-694625551a92')
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/fast_attributes-uuid/fork )
+1. Fork it ( https://github.com/applift/fast_attributes-uuid/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
