@@ -29,7 +29,25 @@ $ gem install fast_attributes-uuid
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'fast_attributes'
+require 'fast_attributes/uuid'
+
+class Request
+  extend FastAttributes
+	attribute :id, UUIDTools::UUID
+end
+
+request = Request.new
+request.id = '479c4718-06d0-4712-b79d-eea7170938c8'
+# => #<UUID:0x3ff8a1a0a684 UUID:479c4718-06d0-4712-b79d-eea7170938c8> 
+
+request.id = 'EFC0CCF6E72243958306D816AB82BAB7'
+# => #<UUID:0x3ff8a19db924 UUID:efc0ccf6-e722-4395-8306-d816ab82bab7>
+
+request.id = UUIDTools::UUID.parse('4e79aff3-1f04-4fea-bebf-694625551a92')
+# => #<UUID:0x3ff8a19c3d24 UUID:4e79aff3-1f04-4fea-bebf-694625551a92>
+```
 
 ## Contributing
 
