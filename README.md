@@ -5,6 +5,9 @@
 [![Code Climate](http://img.shields.io/codeclimate/github/applift/fast_attributes-uuid.svg)](https://codeclimate.com/github/applift/fast_attributes-uuid)
 [![Dependency Status](http://img.shields.io/gemnasium/applift/fast_attributes-uuid.svg)](https://gemnasium.com/applift/fast_attributes-uuid)
 
+## Overview
+This gem adds support of `UUID` type to `fast_attributes` gem
+
 ## Installation
 
 Add this line to your application's Gemfile:
