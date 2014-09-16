@@ -46,4 +46,11 @@ describe FastAttributes::UUID do
     expect(log.request_id).to be_a(UUIDTools::UUID)
     expect(log.request_id.to_s).to eq('d2b4b3e3-4f16-4aa8-bc43-cab90d008171')
   end
+
+  it 'allows to define attribute using symbol notation' do
+    log = SymbolUUID.new
+    log.request_id = 'd2b4b3e3-4f16-4aa8-bc43-cab90d008171'
+    expect(log.request_id).to be_a(UUIDTools::UUID)
+    expect(log.request_id.to_s).to eq('d2b4b3e3-4f16-4aa8-bc43-cab90d008171')
+  end
 end
